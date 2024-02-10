@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h2>Welcome to the Project Tracking App!</h2>
+
+    <h3>Add Team</h3>
+    {{ team_form.csrf_token() }}
+    {{ team_form.team_name.label }} {{ team_form.team_name(class="form-control") }}
+    {{ team_form.submit(type="submit", class="btn btn-primary") }}
+
+    <h3>Add Project</h3>
+    {{ project_form.csrf_token() }}
+    {{ project_form.project_name.label }} {{ project_form.project_name(class="form-control") }}
+    {{ project_form.description.label }} {{ project_form.description(class="form-control") }}
+    {{ project_form.completed.label }} {{ project_form.completed }}
+    {{ project_form.team_selection.label }} {{ project_form.team_selection }}
+    {{ project_form.submit(type="submit", class="btn btn-primary") }}
+{% endblock %}

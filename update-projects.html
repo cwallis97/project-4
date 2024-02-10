@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+    Update Project
+
+    {{ form.csrf_token() }}
+    {{ form.project_name.label }} {{ form.project_name(value=project.project_name, class="form-control") }}
+    {{ form.description.label }} {{ form.description(placeholder=project.description, class="form-control") }}
+    {{ form.completed.label }} {{ form.completed(checked=project.completed) }}
+    {{ form.team_selection.label }} {{ form.team_selection }}
+    {{ form.submit(type="submit", class="btn btn-primary") }}
+{% endblock %}

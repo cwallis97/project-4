@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block main %}
+    {% for project in projects %}
+        Project Name   Description   Completed?   Team
+        {{ project.project_name }}   {{ project.description }}   {{ project.completed }}   {{ project.team.team_name }}   Update   Delete
+    {% endfor %}
+{% endblock %}
